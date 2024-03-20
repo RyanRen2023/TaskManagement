@@ -48,4 +48,13 @@ Implement user authentication, task management, data storage, and retrieval usin
 
 ### 3.3 Database:
 
-Use MongoDB as the database to store user information and task data, leveraging its flexible document model and powerful querying capabilities.
+Use MySQL as the database to store user information and task data, leveraging its flexible document model and powerful querying capabilities.
+
+
+# install instruction 
+
+This application runs on XAMPP environment. 
+the first need to create database and config database user and init database tables. you can run the doc/dbinstall.sql 
+
+## common command
+## my Mac deployment:  cp ../TaskMangement /Applications/XAMPP/htdocs
