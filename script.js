@@ -1,9 +1,7 @@
 /*
-  Name: Ruchen Ding
-  Student Number: 040812415
   File Name: script.js
-  Created Date:Mar 8 2024
-  Brief Description: this file is the JaveScript for my lab 4 the index.html.
+  Created Date:Mar 21 2024
+  Brief Description: this file is the JaveScript for assignment 2.
 */
 
 /* To implement the registration and login forms as modal pop-ups that appear when buttons on the firstPage.html are clicked */
