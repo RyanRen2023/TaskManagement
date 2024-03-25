@@ -1,0 +1,198 @@
+/* reset for the whole page */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: white; /* Full page background color */
+  }
+  /* end of reset */
+  
+  /* -------------------------firstPage.html start below------------------------------- */
+  
+  
+  .welcome {
+    height: 100vh; /* Viewport height */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .welcome-h1 {
+    margin: 0;
+    font-size: 2em; 
+  }
+  
+  .welcome-p {
+    margin: 1em 0;
+    font-size: 1em; 
+    font-style: italic;
+  }
+  
+  /* buttons start */
+  .modal {
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center; /* Centers the buttons horizontally */
+    gap: 20px; /* Space between the buttons */
+  }
+  
+  .register-btn, .login-btn {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white; /* Sets the text color to white */
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    display: inline-flex; /* Aligns text in the center of the button */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .register-btn {
+    background-color: seagreen; /* Green background for the register button */
+  }
+  
+  .register-btn:hover {
+    background-color: mediumseagreen; /* Darker green on hover */
+  }
+  
+  .login-btn {
+    background-color: steelblue; /* Blue background for the login button */
+  }
+  
+  .login-btn:hover {
+    background-color: lightblue; /* Darker blue on hover */
+  }
+  /* buttons end */
+  
+  /* --------------------forms start below--------------------*/
+  /* Center the form container and expand it to cover the entire screen */
+  .formcontainer {
+    align-items: center;
+    height: 100%; /* make it full screen height */
+    padding: 20px;
+  }
+  
+  /* Style the header text */
+  h1 {
+    text-align: left;
+    color: slategray;
+    margin-left: 40px;
+    margin-bottom: 20px;
+  }
+  
+  hr {
+    margin: 20px 40px 20px 40px;
+  }
+  
+  /* Style for fields input */
+  .textfield input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid gainsboro; /* Light grey border */
+    border-radius: 5px;
+  }
+  
+  /* Style for fields label */
+  .textfield, .checkbox {
+    margin: 5px 30px 10px 30px;
+    color: dimgray; /* Label text color */
+  }
+  
+  /* Style for the button submit */
+  button[type="submit"] {
+    background-color: lightgreen; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 10px 5px 10px 30px;
+    padding: 10px 20px 10px 20px;
+    cursor: pointer;
+  }
+  
+  /* Style for the button reset */
+  button[type="reset"] {
+    background-color: tomato; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 10px 0px 10px 0px;
+    padding: 10px 20px 10px 20px;
+    cursor: pointer;
+  }
+  
+  /* button hover effect */
+  button[type="submit"]:hover,
+  button[type="reset"]:hover {
+    opacity: 0.7;
+  }
+  
+  /* left margin space for checkbox texts */
+  .checkbox input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  /* input box extends to the entire width on small screens */
+  @media (max-width: 600px) {
+    .textfield input[type="text"],
+    .textfield input[type="password"] {
+      width: 100%;
+    }
+  
+    button[type="submit"],
+    button[type="reset"] {
+      width: 100%;
+      margin-left: 0; /* let two buttons have same left margin space */
+      margin-bottom: 10px; /* set the vertical space between two buttons */
+    }
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 70%;
+  }
+  
+  #termsError {
+    margin-left: 30px;
+  }
+  
