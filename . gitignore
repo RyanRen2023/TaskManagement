@@ -1,0 +1,31 @@
+# Ignore local files
+a08.sh
+
+# Ignore system-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE and editor files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore dependencies
+/node_modules/
+/bower_components/
+
+# Ignore build artifacts
+/build/
+/dist/
+/out/
+/*.log
+
+# Ignore environment-specific files
+.env
+.env.local
+.env.*.local
+
+# Ignore sensitive or personal information
+*.secret
+*.key
