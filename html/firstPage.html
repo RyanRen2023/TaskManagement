@@ -10,30 +10,116 @@
     <meta name = "description" content = "this page is the welcome page.">
     <meta name = "keywords" content = "welcome">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/assignment2.css">
+    <link rel="stylesheet" href="assignment2.css">
     
     <title>Welcome Page</title>
   </head>
   <body class="welcome">
+
+    <div class="top-nav-1">
+      <a href="firstPage.html" class="top-left">Home</a>
+      <a href="tasklist.html" class="top-left">Tasks</a>
+    </div>
+
+    <div class="top-nav-2">
+      <a href="#about" class="top-right">About Us</a>
+      <a href="#contact" class="top-right">Contact Us</a>
+    </div>
     
     <div class="welcome-wrap-h1">
       <h1 class="welcome-h1">
-        Effectively Manage
-        <br>
-        Your Work & Life
+        Effectively Manage Your Work & Life
       </h1>
     </div>
     <p class="welcome-p">
-      Easily search, filter and update youre tasks.
+      Easily search, filter and update your tasks.
       <br>
       Become organized, calmful and successful.
     </p>
     <div class="button-container">
-      <a href="registration.html" class="register-btn">Free Register</a>
-      <a href="login.html" class="login-btn">Login</a>
-    </div>  
+      <a href="#" class="register-btn">Free Register</a>
+      <a href="#" class="login-btn">Login</a>
+    </div>
 
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        
+        <div class="formcontainer">
+          <h1 class="form-welcome">Welcome !</h1>
+          <hr>
+          <form id="myForm" action="longin.html" method="get" onsubmit="return validate();">
+            <!-- the validate function for this form. -->
+
+            <div class="textfield">
+              <label for="email" class="label-left-align">Email Address</label>
+              <input type="text" name="email" id="email" placeholder="Email">
+              <span id="emailError" class="error-message"></span>
+            </div>
+
+            <div class="textfield">
+              <label for="pass" class="label-left-align">Password</label>
+              <input type="password" name="pass" id="pass" placeholder="Password">
+              <span id="passwordError" class="error-message"></span>
+            </div>
+
+            <button type="submit">Login</button>
+            <button type="reset">Reset</button>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="registrationModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        
+        <div class="formcontainer">
+          <h1 class="form-welcome">Welcome !</h1>
+          <hr>
+          <form id="myForm" action="registration.html" method="get" onsubmit="return validate();">
+            <!-- the validate function for this form. -->
     
+            <div class="textfield">
+              <label for="email" class="label-left-align">Email Address</label>
+              <input type="text" name="email" id="email" placeholder="Email">
+              <span id="emailError" class="error-message"></span>
+            </div>
+    
+            <div class="textfield">
+              <label for="login" class="label-left-align">User Name</label>
+              <input type="text" name="login" id="login" placeholder="User name">
+              <span id="loginNameError" class="error-message"></span>
+            </div>
+    
+            <div class="textfield">
+              <label for="pass" class="label-left-align">Password</label>
+              <input type="password" name="pass" id="pass" placeholder="Password">
+              <span id="passwordError" class="error-message"></span>
+            </div>
+          
+            <div class="textfield">
+              <label for="pass2" class="label-left-align">Re-type Password</label>
+              <input type="password" id="pass2" placeholder="Password">
+              <span id="password2Error" class="error-message"></span>
+            </div>
+    
+            <div class="checkbox">
+              <input type="checkbox" name="terms" id="terms">
+              <label for="terms">I agree to the terms and conditions</label>
+              <span id="termsError" class="error-message"></span>
+            </div>
+    
+            <button type="submit">Sign-Up</button>
+            <button type="reset">Reset</button>
+    
+          </form>
+        </div>
+
+      </div>
+    </div>
 
     <script src="script.js"></script>
     
