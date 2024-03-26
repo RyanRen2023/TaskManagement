@@ -10,7 +10,7 @@
 /* -------------------------firstPage.html start below------------------------------- */
 
 body {
-  background-image: url('Image_sunset.jpg'); /* Replace with the path to your image */
+  background-image: url('../html/Image_sunset.jpg'); /* Replace with the path to your image */
   background-size: cover; /* Ensures the image covers the entire page without changing its aspect ratio */
   background-position: center; /* Centers the image on the page */
   background-repeat: no-repeat; /* Prevents the image from repeating */
