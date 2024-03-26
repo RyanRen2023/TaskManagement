@@ -1,9 +1,9 @@
 <!-- db.php -->
 <?php
 $servername = "localhost"; // or your server name
-$username = "your_username";
-$password = "your_password";
-$dbname = "your_dbname";
+$username = "task_user";
+$password = "task_password";
+$dbname = "task_management_db";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
