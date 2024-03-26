@@ -1,57 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+    <!--
+    File Name: registration.html
+    Created Date: Mar 20 2024
+    Brief Description: this page is the welcome page.
+  -->
+  <head>
     <meta charset="UTF-8">
+    <meta name = "description" content = "this page is the welcome page.">
+    <meta name = "keywords" content = "welcome">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tasks</title>
-    <style>
-        /* Add your CSS styles here */
-    </style>
-</head>
-<body>
-    <header>
-        <!-- Add header content if necessary -->
-    </header>
-    <main>
-        <nav>
-            <ul>
-                <li><a href="#todo">To Do</a></li>
-                <li><a href="#doing">Doing</a></li>
-                <li><a href="#finished">Finished</a></li>
-            </ul>
-        </nav>
-        <div>
-            <section id="todo">
-                <h1>To Do</h1>
-                <ul>
-                    <li>Task 1</li>
-                    <li>Task 2</li>
-                    <li>Task 3</li>
-                    <li>Task 4</li>
-                </ul>
-            </section>
-            <section id="doing">
-                <h1>Doing</h1>
-                <ul>
-                    <li>Task 1</li>
-                    <li>Task 2</li>
-                    <li>Task 3</li>
-                    <li>Task 4</li>
-                </ul>
-            </section>
-            <section id="finished">
-                <h1>Finished</h1>
-                <ul>
-                    <li>Task 1</li>
-                    <li>Task 2</li>
-                    <li>Task 3</li>
-                    <li>Task 4</li>
-                </ul>
-            </section>
-        </div>
-    </main>
-    <footer>
-        <!-- Add footer content if necessary -->
-    </footer>
-</body>
+    <link rel="stylesheet" href="assignment2.css">
+    
+    <title>Task Lists</title>
+  </head>
+  <body class="welcome">
+
+    <div class="top-nav-1">
+      <a href="firstPage.html" class="top-left">Home</a>
+      <a href="tasklist.html" class="top-left">Tasks</a>
+    </div>
+
+    <div class="top-nav-2">
+      <a href="#about" class="top-right">About Us</a>
+      <a href="#contact" class="top-right">Contact Us</a>
+    </div>
+
+    <div class="container-tasks">
+      <div class="list" id="todo-list">
+        <h2 class="tasklist-header">ToDo</h2>
+        <ul class="task-ul">
+          <li class="task-li">Database assignment 2</li>
+          <li class="task-li">Java assignment 3</li>
+          <li class="task-li">Web lab 5</li>
+        </ul>
+      </div>
+      <div class="list" id="doing-list">
+        <h2 class="tasklist-header">Doing</h2>
+        <ul class="task-ul">
+          <li class="task-li">Database lab 6</li>
+          <li class="task-li">Linux lab 8</li>
+          <li class="task-li">Web assignment 2</li>
+        </ul>
+      </div>
+      <div class="list" id="done-list">
+        <h2 class="tasklist-header">Done</h2>
+        <ul class="task-ul">
+          <li class="task-li">Database assignment 1</li>
+          <li class="task-li">Java assignment 2</li>
+          <li class="task-li">Web lab 4</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <script src="script.js"></script>
+    
+  </body>
 </html>
