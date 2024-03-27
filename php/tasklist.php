@@ -1,17 +1,21 @@
 <?php
-    require('db.php');
-    require('fetching_tasklist.php');
-    $sql = "SELECT Username, Password, Email FROM Users";
-    $result = $conn->query($sql);
+require('class/UsersDao.php');
+// require('fetching_tasklist.php');
 
-    if ($result->num_rows > 0) {
-        // output data of each row
-        while($row = $result->fetch_assoc()) {
-        echo "USERNAME: " . $row["Username"]. " - PASSWORD: " . $row["Password"]. " - EMAIL" . $row["Email"]. "<br>";
-        }
-    } else {
-        echo "0 results";
+$user = new Users();
+
+// 获取用户数据
+$result = $user->getAllUsers();
+
+if ($result->num_rows > 0) {
+    // 输出数据
+    while($row = $result->fetch_assoc()) {
+        echo "USERNAME: " . $row["Username"]. " - PASSWORD: " . $row["Password"]. " - EMAIL: " . $row["Email"]. "<br>";
     }
-    $conn->close();
+} else {
+    echo "0 results";
+}
 
+// 关闭连接
+$user->closeConnection();
 ?>

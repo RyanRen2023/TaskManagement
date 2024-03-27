@@ -65,6 +65,6 @@ This application runs on the XAMPP environment.
 
 ### Common Commands:
 
-- For deployment on macOS: `cp ../TaskManagement /Applications/XAMPP/htdocs`
+- For deployment on macOS: `cp -r ../TaskManagement /Applications/XAMPP/htdocs`
 
 Feel free to adjust these instructions according to your specific environment and setup requirements.
