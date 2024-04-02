@@ -1,6 +1,10 @@
 <?php
 require_once('DataSource.php');
 class Users extends DataSource {
+
+    function __construct(){
+        parent::__construct();
+    }
     // Method to add a new user to the database
     function addUser($username, $password, $email) {
         $sql = "INSERT INTO Users (Username, Password, Email, CreatedDate, UpdatedDate) VALUES ('$username', '$password', '$email', NOW(), NOW())";

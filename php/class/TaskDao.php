@@ -2,6 +2,9 @@
 require_once('DataSource.php');
 class Task extends DataSource
 {
+    function __construct(){
+        parent::__construct();
+    }
     // Method to create a new task
     function createTask($title, $description, $dueDate, $priority, $statusID, $categoryID, $listID, $assignedToUserID, $createdByUserID)
     {
