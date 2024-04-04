@@ -151,7 +151,11 @@ function validate(){
 /* ---------------------------form validation ends------------------------------ */ 
 
 
+// Task Query and Filtering:
 
+function taskQuery() {};
+
+function taskFiltering() {};
 
 
 
