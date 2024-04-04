@@ -1,6 +1,6 @@
 <?php
 require_once('DataSource.php');
-class Task extends DataSource
+class TaskListDao extends DataSource
 {
     function __construct(){
         parent::__construct();
@@ -32,6 +32,12 @@ class Task extends DataSource
     {
         $sql = "DELETE FROM Tasks WHERE TaskID=$taskID";
         return $this->query($sql);
+    }
+
+    fucntion getTaskByState($statusID){
+        $sql = "SELECT * FROM Tasks WHERE statusID=$statusID";
+        $result = $this->query($sql);
+        return $result    
     }
 }
 

@@ -1,6 +1,6 @@
 <?php
 require_once('DataSource.php');
-class TaskStatus extends DataSource {
+class TaskStatusDao extends DataSource {
 
     function __construct(){
         parent::__construct();

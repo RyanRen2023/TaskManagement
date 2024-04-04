@@ -1,6 +1,6 @@
 <?php
 require_once('DataSource.php');
-class Task extends DataSource
+class TaskDao extends DataSource
 {
     function __construct(){
         parent::__construct();
@@ -32,6 +32,16 @@ class Task extends DataSource
     {
         $sql = "DELETE FROM Tasks WHERE TaskID=$taskID";
         return $this->query($sql);
+    }
+
+    // In TaskDao.php or a similar file
+    function getTasksByStatusAndUser($statusID, $userID) {
+        $conn = $this->getConnection(); // Use the getConnection method to get the $conn object
+        $stmt = $conn->prepare("SELECT * FROM Tasks WHERE StatusID=? AND AssignedToUserID=? ORDER BY DueDate ASC");
+        $stmt->bind_param("ii", $statusID, $userID);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 }
 

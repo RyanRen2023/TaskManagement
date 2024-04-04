@@ -1,3 +1,26 @@
+<?php
+session_start(); // Start the session to access the session variables
+
+// Check if the user is logged in, if not redirect to login page
+if (!isset($_SESSION['userID'])) {
+    header("Location: login.php");
+    exit;
+}
+
+include '../php/UsersDao.php';
+include '../php/TaskDao.php';
+
+$taskDao = new TaskDAO();
+$userID = $_SESSION['userID']; // Use the userID from the session
+
+echo $userID;
+// Fetch tasks by status for the logged-in user
+$todoTasks = $taskDao->getTasksByStatusAndUser(1, $userID);
+$doingTasks = $taskDao->getTasksByStatusAndUser(2, $userID);
+$doneTasks = $taskDao->getTasksByStatusAndUser(3, $userID);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <!--
@@ -30,25 +53,25 @@
       <div class="list" id="todo-list">
         <h2 class="tasklist-header">ToDo</h2>
         <ul class="task-ul">
-          <li class="task-li">Database assignment 2</li>
-          <li class="task-li">Java assignment 3</li>
-          <li class="task-li">Web lab 5</li>
+          <?php foreach ($todoTasks as $task): ?>
+            <li class="task-li"><?= htmlspecialchars($task['Title']) ?></li>
+          <?php endforeach; ?>
         </ul>
       </div>
       <div class="list" id="doing-list">
         <h2 class="tasklist-header">Doing</h2>
         <ul class="task-ul">
-          <li class="task-li">Database lab 6</li>
-          <li class="task-li">Linux lab 8</li>
-          <li class="task-li">Web assignment 2</li>
+          <?php foreach ($doingTasks as $task): ?>
+            <li class="task-li"><?= htmlspecialchars($task['Title']) ?></li>
+          <?php endforeach; ?>
         </ul>
       </div>
       <div class="list" id="done-list">
         <h2 class="tasklist-header">Done</h2>
         <ul class="task-ul">
-          <li class="task-li">Database assignment 1</li>
-          <li class="task-li">Java assignment 2</li>
-          <li class="task-li">Web lab 4</li>
+          <?php foreach ($doneTasks as $task): ?>
+            <li class="task-li"><?= htmlspecialchars($task['Title']) ?></li>
+          <?php endforeach; ?>
         </ul>
       </div>
     </div>

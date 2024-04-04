@@ -94,6 +94,9 @@ function validatePassword(){
 
 // validate the confirm password
 function validatePassword2(){
+
+
+
   let pass2 = document.getElementById("pass2");
   let password = document.getElementById("pass").value;
   let password2 = document.getElementById("pass2").value;

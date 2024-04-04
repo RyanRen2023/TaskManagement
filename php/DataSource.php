@@ -2,7 +2,7 @@
 <?php
 class DataSource
 {
-  private $conn;
+  protected $conn;
 
   function __construct()
   {
@@ -13,7 +13,7 @@ class DataSource
     // Create connection
     $this->conn = new mysqli($servername, $username, $password, $dbname);
 
-    // 检查连接是否成功
+    // pop error if connetion fail.
     if ($this->conn->connect_error) {
       die("Connection failed: " . $this->conn->connect_error);
     }

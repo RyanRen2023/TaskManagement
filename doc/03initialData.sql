@@ -4,7 +4,7 @@ INSERT INTO Users (Username, Password, Email, CreatedDate, UpdatedDate) VALUES
 ('user1', 'password1', 'user1@example.com', NOW(), NOW()),
 ('user2', 'password2', 'user2@example.com', NOW(), NOW()),
 ('user3', 'password3', 'user3@example.com', NOW(), NOW());
-
+('user4', 'Password666@', 'user4@example.com', NOW(), NOW());
 -- create test data for TaskLists
 INSERT INTO TaskLists (ListName, UserID, IsPersonalList, CreatedDate, UpdatedDate) VALUES
 ('Personal List 1', 1, true, NOW(), NOW()),
