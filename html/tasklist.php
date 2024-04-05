@@ -12,8 +12,12 @@ include '../php/TaskDao.php';
 
 $taskDao = new TaskDAO();
 $userID = $_SESSION['userID']; // Use the userID from the session
+$username = $_SESSION['username'];
+$email = $_SESSION['email'];
 
-echo $userID;
+echo '<div id="username">'.$username.'</div>';
+echo '<div id="useremail">'.$email.'</div>';
+
 // Fetch tasks by status for the logged-in user
 $todoTasks = $taskDao->getTasksByStatusAndUser(1, $userID);
 $doingTasks = $taskDao->getTasksByStatusAndUser(2, $userID);
@@ -41,7 +45,7 @@ $doneTasks = $taskDao->getTasksByStatusAndUser(3, $userID);
 
     <div class="top-nav-1">
       <a href="firstPage.html" class="top-left">Home</a>
-      <a href="tasklist.html" class="top-left">Tasks</a>
+      <a href="tasklist.php" class="top-left">Tasks</a>
     </div>
 
     <div class="top-nav-2">
@@ -49,6 +53,39 @@ $doneTasks = $taskDao->getTasksByStatusAndUser(3, $userID);
       <a href="#contact" class="top-right">Contact Us</a>
     </div>
 
+    <!-- add task section -->
+    <button class="addtask-btn" onclick="document.getElementById('addTaskForm').style.display='block'">Add Task</button>
+
+    <div id="addTaskForm" style="display:none;">
+        <form action="../php/AddTask.php" method="post">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required><br>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea><br>
+
+            <label for="dueDate">Due Date:</label>
+            <input type="date" id="dueDate" name="dueDate" required><br>
+
+            <label for="priority">Priority:</label>
+            <select id="priority" name="priority">
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select><br>
+
+            <label for="status">Status:</label>
+            <select id="status" name="status">
+                <option value="1">To Do</option>
+                <option value="2">Doing</option>
+                <option value="3">Done</option>
+            </select><br>
+
+            <input class="addtask-btn" type="submit" value="Add Task">
+        </form>
+    </div>
+
+    <!-- render task list -->
     <div class="container-tasks">
       <div class="list" id="todo-list">
         <h2 class="tasklist-header">ToDo</h2>

@@ -124,7 +124,7 @@ body {
   margin-top: 5px;
 }
 
-.register-btn, .login-btn {
+.register-btn, .login-btn, .addtask-btn {
   padding: 10px 20px;
   text-decoration: none;
   color: white; /* Sets the text color to white */
@@ -145,11 +145,11 @@ body {
   background-color: mediumseagreen; /* Darker green on hover */
 }
 
-.login-btn {
+.login-btn, .addtask-btn {
   background-color: steelblue; /* Blue background for the login button */
 }
 
-.login-btn:hover {
+.login-btn:hover, .addtask-btn:hover {
   background-color: lightblue; /* Darker blue on hover */
 }
 /* buttons end */
@@ -299,3 +299,6 @@ button[type="reset"]:hover {
   border-radius: 5px; /* Add some border radius */
   background-color: rgba(255, 255, 255, 0); /* Completely transparent background */
 }
+
+
+/* tasklist: add task by XIE */
