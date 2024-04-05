@@ -43,6 +43,22 @@ class TaskDao extends DataSource
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+
+    function searchTasks(string $keywords, string $status, int $userID) {
+        $conn = $this->getConnection();
+        $stmt = $conn->prepare("SELECT t.Title, ts.StatusName
+        FROM task_management_db.tasks AS t
+        JOIN task_management_db.taskstatuses AS ts ON t.StatusID = ts.StatusID
+        WHERE (t.Title LIKE ?
+        OR ts.StatusName = ?)
+        AND t.CreatedByUserID = ?;");
+        // $stmt->execute(['keywords' => $keywords, 'taskStatus' => $status, 'userID' => $userID]);
+        $kw = "%$keywords%";
+        $stmt->bind_param("ssi", $kw, $status, $userID);
+        $stmt->execute();
+        $tasks = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $tasks;
+    }
 }
 
 ?>
