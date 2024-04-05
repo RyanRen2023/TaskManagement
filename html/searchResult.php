@@ -1,5 +1,8 @@
 <?php
-session_start(); // Start the session to access the session variables
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
+
 
 // Check if the user is logged in, if not redirect to login page
 if (!isset($_SESSION['userID'])) {
@@ -7,13 +10,13 @@ if (!isset($_SESSION['userID'])) {
     exit;
 }
 
-include '../php/UsersDao.php';
-include '../php/TaskDao.php';
+include_once '../php/UsersDao.php';
+include_once '../php/TaskDao.php';
 
 $taskDao = new TaskDAO();
 $userID = $_SESSION['userID']; // Use the userID from the session
 
-echo $userID;
+// echo $userID;
 // Fetch tasks by status for the logged-in user
 $todoTasks = $taskDao->getTasksByStatusAndUser(1, $userID);
 $doingTasks = $taskDao->getTasksByStatusAndUser(2, $userID);
@@ -50,34 +53,47 @@ $doneTasks = $taskDao->getTasksByStatusAndUser(3, $userID);
       <a href="#add" class="top-right">Add</a>
     </div>
 
-  
+  <!----------------- The Search Result ---------------------->
 
-    <div class="container-tasks">
-      <div class="list" id="todo-list">
-        <h2 class="tasklist-header">ToDo</h2>
-        <ul class="task-ul">
-          <?php foreach ($todoTasks as $task): ?>
-            <li class="task-li"><?= htmlspecialchars($task['Title']) ?></li>
-          <?php endforeach; ?>
-        </ul>
-      </div>
-      <div class="list" id="doing-list">
-        <h2 class="tasklist-header">Doing</h2>
-        <ul class="task-ul">
-          <?php foreach ($doingTasks as $task): ?>
-            <li class="task-li"><?= htmlspecialchars($task['Title']) ?></li>
-          <?php endforeach; ?>
-        </ul>
-      </div>
-      <div class="list" id="done-list">
-        <h2 class="tasklist-header">Done</h2>
-        <ul class="task-ul">
-          <?php foreach ($doneTasks as $task): ?>
-            <li class="task-li"><?= htmlspecialchars($task['Title']) ?></li>
-          <?php endforeach; ?>
-        </ul>
-      </div>
-    </div>
+  <?php
+    // Check if data has been submitted via the POST method
+if (isset($_POST['keywords']) && isset($_POST['taskStatus'])) {
+  // Retrieve data from the POST request
+  $keywords = $_POST['keywords'] ?? ''; 
+  $status = $_POST['taskStatus'] ?? '';
+
+  $taskDao = new TaskDAO();
+  $tasks = $taskDao->searchTasks($keywords, $status, $userID);
+
+  // Process data, for example: perform a database query
+  // The actual database query logic is omitted here
+  // $results = searchTasks($keywords, $status);
+
+  // foreach ($tasks as $task) {
+  //   echo "<p>Task Title: " . htmlspecialchars($task['Title']) . "</p>";
+  //   echo "<p>Task Status: " . htmlspecialchars($task['StatusName']) . "</p>";
+  //   // Adjust field names according to your data structure
+  // }
+
+  // Display the results
+  if ($tasks) {
+      foreach ($tasks as $task) {
+          echo "<p class='sr'>Task Title: " . htmlspecialchars($task['Title']) . "</p>";
+          echo "<p class='sr'>Task Status: " . htmlspecialchars($task['StatusName']) . "</p>";
+          // Adjust field names according to your data structure
+      }
+  } else {
+      echo "<p>No matching tasks found.</p>";
+  }
+
+}
+
+
+    ?>
+
+  <!----------------- The Search Result End ---------------------->
+
+
 
 
     <script src="script.js"></script>
