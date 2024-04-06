@@ -475,3 +475,58 @@ button[type="reset"]:hover {
 .sr{
   border-bottom: 1px solid;
 }
+
+.addTaskForm{
+  display: none;
+  /* Hidden by default */
+}
+
+.addTaskForm.show{
+  display: block;
+}
+
+.addTaskForm-content{
+  width: 50%;
+}
+
+#addTaskForm {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#addTaskForm label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#addTaskForm input[type="text"],
+#addTaskForm textarea,
+#addTaskForm select {
+  width: calc(100% - 12px); /* Adjust for the default padding */
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+#addTaskForm input[type="date"] {
+  width: calc(100% - 12px); /* Adjust for the default padding */
+}
+
+#addTaskForm input[type="submit"] {
+  width: 100%; /* Button spans full width */
+  background-color: #4CAF50; /* Green */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#addTaskForm input[type="submit"]:hover {
+  background-color: #45a049; /* Darker green */
+}

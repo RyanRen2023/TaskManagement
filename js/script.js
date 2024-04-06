@@ -393,6 +393,20 @@ function initialize() {
 
 }
 
+var addformbtn = document.getElementById("addTaskButton");
+if(addformbtn){
+  addformbtn.addEventListener('click',function(){
+    let addModel = document.getElementById("add-task");
+    addModel.classList.remove("show");
+    addModel.classList.add("show");
+  })
+}
+
+function goToSearch(){
+  console.log("enter go to search!");
+  location.href="../html/search.php";
+}
+
 
 
 

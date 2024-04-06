@@ -13,9 +13,11 @@ include '../php/taskAction.php';
 
 $taskDao = new TaskDAO();
 $userID = $_SESSION['userID']; // Use the userID from the session
+$username = $_SESSION['username'];
+$email = $_SESSION['email'];
 
-echo '<div id="username">'.$username.'</div>';
-echo '<div id="useremail">'.$email.'</div>';
+
+
 
 // Fetch tasks by status for the logged-in user
 $todoTasks = $taskDao->getTasksByStatusAndUser(1, $userID);
@@ -49,13 +51,30 @@ $doneTasks = $taskDao->getTasksByStatusAndUser(3, $userID);
     <a href="tasklist.php" class="top-left">Tasks</a>
   </div>
 
-  <div class="top-nav-2">
+  <!-- <div class="top-nav-2">
     <!-- Button to open the modal -->
     <!--<button id="searchBtn" class="search-btn" class="top-right">Search</button>-->
-    <a href="../html/search.php" class="top-right">Search</a>
-    <a href="#add" class="top-right">Add</a>
+    <!-- <a href="../html/search.php" class="top-right">Search</a>
+    <a href="#add" class="top-right">Add</a> -->
+  <!-- </div> --> 
+
+  <div class="top-nav-2 ">
+    <?php
+        echo '<h1 id="username" class="welcome-h1">' . $username . '</h1>';
+        echo '<h2 id="useremail" class="welcome-p">' . $email . '</h2>';
+    ?>   
   </div>
 
+  <!-- add task section -->
+  <div class= "button-container">
+  <button class="addtask-btn" id="addTaskButton">Add Task</button>
+  <button class="addtask-btn" id="searchButton" onclick="goToSearch()">Search</button>
+  </div>
+  
+
+
+
+  <!-- render task list -->
 
 
   <div class="container-tasks">
@@ -90,8 +109,8 @@ $doneTasks = $taskDao->getTasksByStatusAndUser(3, $userID);
     </div>
   </div>
 
-   <!-- Button container -->
-   <div class="task-button-container" id="buttonContainer">
+  <!-- Button container -->
+  <div class="task-button-container" id="buttonContainer">
     <button class="edit-button">Edit</button>
     <button class="delete-button">Delete</button>
   </div>
@@ -124,8 +143,8 @@ $doneTasks = $taskDao->getTasksByStatusAndUser(3, $userID);
     </section>
   </div>
 
-   <!-- delete task by ID -->
-   <div class="modal delete-task" id="delete-task">
+  <!-- delete task by ID -->
+  <div class="modal delete-task" id="delete-task">
     <section class="modal-content task-status-content">
       <h2 id="task-title">Delete Task</h2>
       <p id="delete-confirm-message"> Are you sure to delete Task: Task 1?</p>
@@ -133,6 +152,41 @@ $doneTasks = $taskDao->getTasksByStatusAndUser(3, $userID);
         <input type="hidden" id="deleteTaskId" value="">
         <button type="button" onclick="confirmDelete()" class="edit-button">Confirm</button>&nbsp;
         <button type="button" onclick="closeDeleteModal()" class="delete-button">Cancel</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- delete task by ID -->
+  <div class="modal addTaskForm" id="add-task">
+    <section class="modal-content addTaskForm-content">
+      <h2 id="task-title">Add Task</h2>
+      <div id="addTaskForm">
+        <form action="../php/AddTask.php" method="post">
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="title" required><br>
+
+          <label for="description">Description:</label>
+          <textarea id="description" name="description" required></textarea><br>
+
+          <label for="dueDate">Due Date:</label>
+          <input type="date" id="dueDate" name="dueDate" required><br>
+
+          <label for="priority">Priority:</label>
+          <select id="priority" name="priority">
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select><br>
+
+          <label for="status">Status:</label>
+          <select id="status" name="status">
+            <option value="1">To Do</option>
+            <option value="2">Doing</option>
+            <option value="3">Done</option>
+          </select><br>
+
+          <input class="addtask-btn" type="submit" value="Add Task">
+        </form>
       </div>
     </section>
   </div>

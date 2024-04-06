@@ -2,9 +2,12 @@
 
 
 <?php
-if (session_status() == PHP_SESSION_NONE) {
-  session_start();
-}
+// if (session_status() == PHP_SESSION_NONE) {
+//   session_start();
+// }
+
+session_start();
+
 
 
 // Check if the user is logged in, if not redirect to login page
@@ -18,6 +21,8 @@ include_once '../php/TaskDao.php';
 
 $taskDao = new TaskDAO();
 $userID = $_SESSION['userID']; // Use the userID from the session
+$username = $_SESSION['username'];
+$email = $_SESSION['email'];
 
 // echo $userID;
 // Fetch tasks by status for the logged-in user
@@ -49,12 +54,12 @@ $doneTasks = $taskDao->getTasksByStatusAndUser(3, $userID);
       <a href="tasklist.php" class="top-left">Tasks</a>
     </div>
 
-    <div class="top-nav-2">
-      <!-- Button to open the modal -->
-      <!--<button id="searchBtn" class="search-btn" class="top-right">Search</button>-->
-      <a href="../html/search.php" class="top-right">Search</a>
-      <a href="#add" class="top-right">Add</a>
-    </div>
+    <div class="top-nav-2 ">
+    <?php
+        echo '<h1 id="username" class="welcome-h1">' . $username . '</h1>';
+        echo '<h2 id="useremail" class="welcome-p">' . $email . '</h2>';
+    ?>   
+  </div>
 
   <!-------------------------------search------------------------------- *>
 
