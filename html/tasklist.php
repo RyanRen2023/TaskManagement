@@ -126,8 +126,9 @@ $doneTasks = $taskDao->getTasksByStatusAndUser(3, $userID);
    <div class="modal delete-task" id="delete-task">
     <section class="modal-content task-status-content">
       <h2 id="task-title">Delete Task</h2>
-      <p> Are you sure to delete Task: Task 1?</p>
+      <p id="delete-confirm-message"> Are you sure to delete Task: Task 1?</p>
       <div>
+        <input type="hidden" id="deleteTaskId" value="">
         <button type="button" onclick="confirmDelete()" class="edit-button">Confirm</button>&nbsp;
         <button type="button" onclick="closeDeleteModal()" class="delete-button">Cancel</button>
       </div>

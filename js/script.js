@@ -170,7 +170,9 @@ function taskFiltering() { };
 // 获取所有具有 'task-li' 类的元素
 const taskItems = document.querySelectorAll('.task-li');
 const buttonContainer = document.getElementById('buttonContainer');
-
+if(buttonContainer){
+  buttonContainer.classList.remove('show');
+}
 // Iterate over all 'task-li' elements and add event listeners to each one
 taskItems.forEach(function (item) {
   item.addEventListener('mouseover', function (event) {
@@ -277,7 +279,7 @@ function showTaskStatusModal(taskId) {
 
 
 }
-
+// set modal data for update 
 function setModalData(taskId, taskTitle, taskStatus) {
 
   // Get the task title element and set its text content
@@ -323,39 +325,60 @@ function updateTaskStatus(taskId, selectedStatus) {
 
   let callback = function () {
     if (this.readyState == 4 && this.status == 200) {
-      console.log("task update: " + this.responseText);     
+      console.log("task update: " + this.responseText);
       closeEditModal();
       // refresh the parent page.
+     
       window.location.reload();
-      
+
     }
   };
-  let params = "taskId=" + taskId +"&StatusID="+selectedStatus+ "&func=updateTaskById";
-  sendDataToServer("../php/taskAction.php","POST",callback,params);
+  let params = "taskId=" + taskId + "&StatusID=" + selectedStatus + "&func=updateTaskById";
+  sendDataToServer("../php/taskAction.php", "POST", callback, params);
 }
 
 
 function closeEditModal() {
   const task_modal = document.getElementById("edit-task-status");
   task_modal.classList.remove("show");
-  
+
 }
 
 
 // after choose delete ,there are two options, one is delete ,another is cannel
 function showTaskDeleteModal(taskId) {
 
+  document.getElementById("deleteTaskId").value=taskId;
+  document.getElementById("delete-confirm-message").innerText="Are you sure to delete Task: Task "+taskId+"?";
   const task_modal = document.getElementById("delete-task");
   task_modal.classList.remove("show");
   // before show need to add data 
-
   task_modal.classList.add("show");
 }
+
+function confirmDelete() {
+   let taskId = document.getElementById("deleteTaskId").value;
+   let callback = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      console.log("task delete: " + this.responseText);
+      closeDeleteModal();
+      // refresh the parent page.
+      if(buttonContainer){
+        buttonContainer.classList.remove('show');
+      }
+      window.location.reload();
+
+    }
+  };
+  let params = "taskId=" + taskId + "&func=deleteTaskById";
+  sendDataToServer("../php/taskAction.php", "POST", callback, params);}
 
 function closeDeleteModal() {
   const task_modal = document.getElementById("delete-task");
   task_modal.classList.remove("show");
 }
+
+
 
 
 

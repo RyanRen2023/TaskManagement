@@ -23,6 +23,12 @@ function updateTaskById($taskID, $statusID){
     return $task;
 }
 
+function deleteTaskById($taskID){
+    global $taskDao;
+    $task = $taskDao->updateTaskStatus($taskID, 4);
+    return $task;
+}
+
 
 // echo "task aciton get your request!" .$_SERVER['REQUEST_METHOD'] . var_dump($_POST) . var_dump($_GET) . var_dump($_REQUEST);
 
@@ -36,6 +42,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $taskID = $_POST["taskId"];
         $statusID = $_POST["StatusID"];
         echo updateTaskById($taskID, $statusID);
+    }else if ($func == "deleteTaskById") {
+        $taskID = $_POST["taskId"];
+        echo deleteTaskById($taskID);
     }
 }
 

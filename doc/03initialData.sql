@@ -28,6 +28,7 @@ INSERT INTO TaskStatuses (statusid,StatusName, CreatedDate, UpdatedDate) VALUES
 (2,'In Progress', NOW(), NOW()),
 (3,'Completed', NOW(), NOW());
 
+-- add a new status.
 INSERT INTO TaskStatuses (statusid,StatusName, CreatedDate, UpdatedDate) VALUES
 (4,'Deleted', NOW(), NOW());
 
