@@ -15,8 +15,8 @@ $userID = $_SESSION['userID']; // Use the userID from the session
 $username = $_SESSION['username'];
 $email = $_SESSION['email'];
 
-echo '<div id="username">'.$username.'</div>';
-echo '<div id="useremail">'.$email.'</div>';
+echo '<div id="username">Username: '.$username.'</div>';
+echo '<div id="useremail">Email: '.$email.'</div>';
 
 // Fetch tasks by status for the logged-in user
 $todoTasks = $taskDao->getTasksByStatusAndUser(1, $userID);
