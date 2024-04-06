@@ -156,7 +156,7 @@ $doneTasks = $taskDao->getTasksByStatusAndUser(3, $userID);
     </section>
   </div>
 
-  <!-- delete task by ID -->
+  <!-- Add task form -->
   <div class="modal addTaskForm" id="add-task">
     <section class="modal-content addTaskForm-content">
       <h2 id="task-title">Add Task</h2>
@@ -186,6 +186,7 @@ $doneTasks = $taskDao->getTasksByStatusAndUser(3, $userID);
           </select><br>
 
           <input class="addtask-btn" type="submit" value="Add Task">
+          <input class="reset-btn" type="reset" id ="cancelButton" value="Cancel">
         </form>
       </div>
     </section>

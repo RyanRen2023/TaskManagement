@@ -408,7 +408,15 @@ function goToSearch(){
 }
 
 
+// cancel add form
+document.getElementById('cancelButton').addEventListener('click', function() {
+  document.getElementById('add-task').style.display = 'none';
+});
 
+// re-click add task from
+document.getElementById('addTaskButton').addEventListener('click', function() {
+  document.getElementById('add-task').style.display = 'block';
+});
 
 
 

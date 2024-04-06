@@ -530,3 +530,18 @@ button[type="reset"]:hover {
 #addTaskForm input[type="submit"]:hover {
   background-color: #45a049; /* Darker green */
 }
+
+#addTaskForm input[type="reset"] {
+  width: 100%; /* Button spans full width */
+  background-color: #fd1500; /* Green */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+#addTaskForm input[type="reset"]:hover {
+  background-color: #f75849; /* Darker green */
+}
