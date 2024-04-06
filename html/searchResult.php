@@ -96,7 +96,7 @@ if (isset($_POST['keywords']) && isset($_POST['taskStatus'])) {
 
 
 
-    <script src="script.js"></script>
+    <script src="../js/script.js"></script>
     
   </body>
 </html>

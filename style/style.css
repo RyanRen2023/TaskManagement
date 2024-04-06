@@ -3,23 +3,32 @@
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background-color: white; /* Full page background color */
+  background-color: white;
+  /* Full page background color */
 }
+
 /* end of reset */
 
 /* -------------------------firstPage.html start below------------------------------- */
 
 body {
-  background-image: url('../images/Image_sunset.jpg'); /* Replace with the path to your image */
-  background-size: cover; /* Ensures the image covers the entire page without changing its aspect ratio */
-  background-position: center; /* Centers the image on the page */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
-  height: 100%; /* Ensures the body takes up the full viewport height */
-  margin: 0; /* Removes the default margin */
+  background-image: url('../images/Image_sunset.jpg');
+  /* Replace with the path to your image */
+  background-size: cover;
+  /* Ensures the image covers the entire page without changing its aspect ratio */
+  background-position: center;
+  /* Centers the image on the page */
+  background-repeat: no-repeat;
+  /* Prevents the image from repeating */
+  height: 100%;
+  /* Ensures the body takes up the full viewport height */
+  margin: 0;
+  /* Removes the default margin */
 }
 
 .welcome {
-  height: 100vh; /* Viewport height */
+  height: 100vh;
+  /* Viewport height */
   margin: 0;
   padding: 0;
   display: flex;
@@ -31,75 +40,110 @@ body {
 
 /* link on page top */
 .top-nav-1 {
-  position: absolute; /* Position it at a specific location on the page */
-  top: 0; /* At the top of the page */
-  left: 0; /* At the left side of the page */
-  background-color: rgba(255, 255, 255, 0); /* Completely transparent background */
-  padding: 30px; /* Add some padding */
+  position: absolute;
+  /* Position it at a specific location on the page */
+  top: 0;
+  /* At the top of the page */
+  left: 0;
+  /* At the left side of the page */
+  background-color: rgba(255, 255, 255, 0);
+  /* Completely transparent background */
+  padding: 30px;
+  /* Add some padding */
 }
+
 .top-left {
-  text-decoration: none; /* Remove underline from links */
-  background-color: rgba(255, 255, 255, 0); /* Completely transparent background */
-  color: white; /* Light grey text color */
+  text-decoration: none;
+  /* Remove underline from links */
+  background-color: rgba(255, 255, 255, 0);
+  /* Completely transparent background */
+  color: white;
+  /* Light grey text color */
   margin-right: 20px;
 }
+
 .top-nav-2 {
-  position: absolute; /* Position it at a specific location on the page */
-  top: 0; /* At the top of the page */
-  right: 0; /* At the right side of the page */
-  background-color: rgba(255, 255, 255, 0); /* Completely transparent background */
-  padding: 30px; /* Add some padding */
+  position: absolute;
+  /* Position it at a specific location on the page */
+  top: 0;
+  /* At the top of the page */
+  right: 0;
+  /* At the right side of the page */
+  background-color: rgba(255, 255, 255, 0);
+  /* Completely transparent background */
+  padding: 30px;
+  /* Add some padding */
 }
+
 .top-right {
-  text-decoration: none; /* Remove underline from links */
-  background-color: rgba(255, 255, 255, 0); /* Completely transparent background */
-  color: white; /* Light grey text color */
+  text-decoration: none;
+  /* Remove underline from links */
+  background-color: rgba(255, 255, 255, 0);
+  /* Completely transparent background */
+  color: white;
+  /* Light grey text color */
   margin-right: 20px;
 }
 
 .welcome-wrap-h1 {
-  background-color: rgba(255, 255, 255, 0); /* Completely transparent background */
+  background-color: rgba(255, 255, 255, 0);
+  /* Completely transparent background */
 }
 
 .welcome-h1 {
   margin: 0;
-  font-size: 2.5em; 
-  background-color: rgba(255, 255, 255, 0); /* Completely transparent background */
+  font-size: 2.5em;
+  background-color: rgba(255, 255, 255, 0);
+  /* Completely transparent background */
 }
 
 .welcome-p {
   margin: 1em 0;
-  font-size: 1.5em; 
+  font-size: 1.5em;
   font-style: italic;
-  background-color: rgba(255, 255, 255, 0); /* Completely transparent background */
-  color: white; /* White text color */
+  background-color: rgba(255, 255, 255, 0);
+  /* Completely transparent background */
+  color: white;
+  /* White text color */
 }
 
 /* buttons start */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
 }
 
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
+  margin: 15% auto;
+  /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 80%;
+  /* Could be more or less, depending on screen size */
   background-color: #fefefe;
-  margin: 10% auto; /* Adjust to start 10% from the top and centered on the page */
+  margin: 10% auto;
+  /* Adjust to start 10% from the top and centered on the page */
   padding: 20px;
   border: 1px solid #888;
-  width: 40%; /* Reduce width to 50%, adjust as necessary */
+  width: 40%;
+  /* Reduce width to 50%, adjust as necessary */
 }
 
 .close {
@@ -118,47 +162,62 @@ body {
 
 .button-container {
   display: flex;
-  justify-content: center; /* Centers the buttons horizontally */
-  gap: 20px; /* Space between the buttons */
-  background-color: rgba(255, 255, 255, 0); /* Completely transparent background */
+  justify-content: center;
+  /* Centers the buttons horizontally */
+  gap: 20px;
+  /* Space between the buttons */
+  background-color: rgba(255, 255, 255, 0);
+  /* Completely transparent background */
   margin-top: 5px;
 }
 
-.register-btn, .login-btn, .addtask-btn {
+.register-btn,
+.login-btn,
+.addtask-btn {
   padding: 10px 20px;
   text-decoration: none;
-  color: white; /* Sets the text color to white */
+  color: white;
+  /* Sets the text color to white */
   border: none;
   border-radius: 5px;
   font-weight: bold;
   transition: background-color 0.3s;
-  display: inline-flex; /* Aligns text in the center of the button */
+  display: inline-flex;
+  /* Aligns text in the center of the button */
   justify-content: center;
   align-items: center;
 }
 
 .register-btn {
-  background-color: seagreen; /* Green background for the register button */
+  background-color: seagreen;
+  /* Green background for the register button */
 }
 
 .register-btn:hover {
-  background-color: mediumseagreen; /* Darker green on hover */
+  background-color: mediumseagreen;
+  /* Darker green on hover */
 }
 
-.login-btn, .addtask-btn {
-  background-color: steelblue; /* Blue background for the login button */
+.login-btn,
+.addtask-btn {
+  background-color: steelblue;
+  /* Blue background for the login button */
 }
 
-.login-btn:hover, .addtask-btn:hover {
-  background-color: lightblue; /* Darker blue on hover */
+.login-btn:hover,
+.addtask-btn:hover {
+  background-color: lightblue;
+  /* Darker blue on hover */
 }
+
 /* buttons end */
 
 /* --------------------forms start below--------------------*/
 /* Center the form container and expand it to cover the entire screen */
 .formcontainer {
   align-items: center;
-  height: 100%; /* make it full screen height */
+  height: 100%;
+  /* make it full screen height */
   padding: 20px;
 }
 
@@ -177,7 +236,8 @@ hr {
 /* style for the form label */
 .label-left-align {
   text-align: left;
-  display: block; /* Make the label occupy a whole line to ensure the text alignment takes effect */
+  display: block;
+  /* Make the label occupy a whole line to ensure the text alignment takes effect */
 }
 
 /* Style for fields input */
@@ -185,19 +245,22 @@ hr {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
-  border: 1px solid gainsboro; /* Light grey border */
+  border: 1px solid gainsboro;
+  /* Light grey border */
   border-radius: 5px;
 }
 
 /* Style for fields label */
-.textfield, .checkbox {
+.textfield,
+.checkbox {
   margin: 5px 30px 10px 30px;
-  color: dimgray; /* Label text color */
+  color: dimgray;
+  /* Label text color */
 }
 
 /* Style for the button submit */
 button[type="submit"] {
-  background-color: lightgreen; 
+  background-color: lightgreen;
   color: white;
   border: none;
   border-radius: 5px;
@@ -208,7 +271,7 @@ button[type="submit"] {
 
 /* Style for the button reset */
 button[type="reset"] {
-  background-color: tomato; 
+  background-color: tomato;
   color: white;
   border: none;
   border-radius: 5px;
@@ -230,6 +293,7 @@ button[type="reset"]:hover {
 
 /* input box extends to the entire width on small screens */
 @media (max-width: 600px) {
+
   .textfield input[type="text"],
   .textfield input[type="password"] {
     width: 100%;
@@ -238,8 +302,10 @@ button[type="reset"]:hover {
   button[type="submit"],
   button[type="reset"] {
     width: 100%;
-    margin-left: 0; /* let two buttons have same left margin space */
-    margin-bottom: 10px; /* set the vertical space between two buttons */
+    margin-left: 0;
+    /* let two buttons have same left margin space */
+    margin-bottom: 10px;
+    /* set the vertical space between two buttons */
   }
 }
 
@@ -260,45 +326,143 @@ button[type="reset"]:hover {
 
 .container-tasks {
   display: flex;
-  justify-content: space-between; /*make the list items spread out evenly */
-  flex-wrap: wrap; /* Allow the lists to wrap to the next line */ 
+  justify-content: space-between;
+  /*make the list items spread out evenly */
+  flex-wrap: wrap;
+  /* Allow the lists to wrap to the next line */
   align-items: start;
   padding: 20px;
-  gap: 20px; /* Space between the lists */
-  background-color: rgba(255, 255, 255, 0); /* Completely transparent background */
+  gap: 20px;
+  /* Space between the lists */
+  background-color: rgba(255, 255, 255, 0);
+  /* Completely transparent background */
+  width: 80%;
 }
+
 .list {
-  display: flex; /* Make the list items display in a row */
-  flex-direction: column; /* Make the list items display in a column */
-  flex: 1; /* Make the list items take up equal space */
+  display: flex;
+  /* Make the list items display in a row */
+  flex-direction: column;
+  /* Make the list items display in a column */
+  flex: 1;
+  /* Make the list items take up equal space */
   border: none;
-  background-color: rgba(255, 255, 255, 0.5); /* Completely transparent background */
-  margin: 0 5px; /* Add some margin between the lists */
+  background-color: rgba(255, 255, 255, 0.5);
+  /* Completely transparent background */
+  margin: 0 5px;
+  /* Add some margin between the lists */
   padding: 10px;
-  list-style-type: none; /* Remove the default list style */
-  width: 33%; /* Set the width of the list */
-  min-height: 400px; /* Set a minimum height for the list */
-  max-height: 600px; /* Set a maximum height for the list */
+  list-style-type: none;
+  /* Remove the default list style */
+  width: 33%;
+  /* Set the width of the list */
+  min-height: 400px;
+  /* Set a minimum height for the list */
+  max-height: 600px;
+  /* Set a maximum height for the list */
 }
+
 .tasklist-header {
   text-align: center;
-  background-color: rgba(255, 255, 255, 0); /* Completely transparent background */
-  margin-bottom: 20px; /* Add some margin at the bottom */
+  background-color: rgba(255, 255, 255, 0);
+  /* Completely transparent background */
+  margin-bottom: 20px;
+  /* Add some margin at the bottom */
 }
+
 .task-ul {
-  padding-left: 0; /* Remove the default padding */
-  background-color: rgba(255, 255, 255, 0); /* Completely transparent background */
+  padding-left: 0;
+  /* Remove the default padding */
+  background-color: rgba(255, 255, 255, 0);
+  /* Completely transparent background */
 }
 
 .task-li {
-  display: flex;
-  justify-content: space-between; /* Align the task name and the delete button to the left and right */
-  align-items: center;
+  position: relative;
+  list-style-type: none;
   padding: 10px;
+  margin: 5px;
   border-bottom: 1px solid #000;
-  border-radius: 5px; /* Add some border radius */
-  background-color: rgba(255, 255, 255, 0); /* Completely transparent background */
+  border-radius: 5px;
+  /* Add some border radius */
+  background-color: rgba(255, 255, 255, 0);
+  /* Completely transparent background */
+}
+
+.task-li:hover {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
+  /* Semi-transparent background on hover */
+}
+
+/* Hide button container style */
+.task-button-container {
+  display: none;
+  position: absolute;
+  z-index: 999;
+  /*Ensure the button container is on top */
+  width: 90%;
 }
 
 
-/* tasklist: add task by XIE */
+
+/* Show button container style */
+.task-button-container.show {
+  display: inline-flex;
+  /* Use flexbox */
+  justify-content: center;
+  /* Center horizontally */
+  gap: 10px;
+}
+
+/* CSS for edit button */
+.edit-button {
+  background-color: green;
+  /* Set background color to green */
+  color: white;
+  /* Set text color to white */
+}
+
+/* CSS for delete button */
+.delete-button {
+  background-color: red;
+  /* Set background color to red */
+  color: white;
+  /* Set text color to white */
+}
+
+.modal.edit-task-status {
+  display: none;
+  /* Hidden by default */
+}
+
+.modal.edit-task-status.show {
+  display: block;
+}
+
+.modal.delete-task {
+  display: none;
+  /* Hidden by default */
+}
+
+.modal.delete-task.show {
+  display: block;
+}
+
+
+.modal-content.task-status-content {
+  width: 50%;
+}
+
+.task-stauts-list {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  list-style-type: none;
+  /* padding: 5px; */
+  margin: 20px auto;
+}
+
+.modal-content.task-status-content p{
+  margin: 20px auto;
+}

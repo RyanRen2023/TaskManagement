@@ -27,6 +27,12 @@ class TaskDao extends DataSource
         return $this->query($sql);
     }
 
+    function updateTaskStatus($taskID,$statusID)
+    {
+        $sql = "UPDATE Tasks SET StatusID=$statusID, UpdatedDate=NOW() WHERE TaskID=$taskID";
+        return $this->query($sql);
+    }
+
     // Method to delete a task from the database
     function deleteTask($taskID)
     {
