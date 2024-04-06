@@ -46,7 +46,7 @@ $doneTasks = $taskDao->getTasksByStatusAndUser(3, $userID);
 
     <div class="top-nav-1">
       <a href="firstPage.html" class="top-left">Home</a>
-      <a href="tasklist.html" class="top-left">Tasks</a>
+      <a href="tasklist.php" class="top-left">Tasks</a>
     </div>
 
     <div class="top-nav-2">

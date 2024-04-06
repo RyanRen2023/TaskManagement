@@ -89,7 +89,7 @@ $doneTasks = $taskDao->getTasksByStatusAndUser(3, $userID);
   </div>
 
    <!-- Button container -->
-   <div class="button-container" id="buttonContainer">
+   <div class="task-button-container" id="buttonContainer">
     <button class="edit-button">Edit</button>
     <button class="delete-button">Delete</button>
   </div>
