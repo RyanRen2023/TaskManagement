@@ -28,6 +28,10 @@ INSERT INTO TaskStatuses (statusid,StatusName, CreatedDate, UpdatedDate) VALUES
 (2,'In Progress', NOW(), NOW()),
 (3,'Completed', NOW(), NOW());
 
+-- add a new status.
+INSERT INTO TaskStatuses (statusid,StatusName, CreatedDate, UpdatedDate) VALUES
+(4,'Deleted', NOW(), NOW());
+
 -- create test data for TaskCategories
 INSERT INTO TaskCategories (CategoryId,CategoryName, CreatedDate, UpdatedDate) VALUES
 (1,'Category 1', NOW(), NOW()),
@@ -39,3 +43,12 @@ INSERT INTO Tasks (Title, Description, DueDate, Priority, StatusID, CategoryID, 
 ('Task 1', 'Description for task 1', '2024-04-01', 'Medium', 1, 1, 1, 2, 1, NOW(), NOW()),
 ('Task 2', 'Description for task 2', '2024-04-02', 'High', 2, 2, 2, NULL, 2, NOW(), NOW()),
 ('Task 3', 'Description for task 3', '2024-04-03', 'Low', 3, 3, 3, 3, 3, NOW(), NOW());
+
+
+
+
+INSERT INTO Tasks (Title, Description, DueDate, Priority, StatusID, CategoryID, ListID, AssignedToUserID, CreatedByUserID, CreatedDate, UpdatedDate) VALUES
+('Task 1', 'Description for task 1', '2024-04-01', 'Medium', 1, 1, 1, 2, 1, NOW(), NOW()),
+('Task 2', 'Description for task 2', '2024-04-02', 'High', 2, 2, 2, NULL, 2, NOW(), NOW()),
+('Task 3', 'Description for task 3', '2024-04-03', 'Low', 3, 3, 3, 3, 3, NOW(), NOW());
+

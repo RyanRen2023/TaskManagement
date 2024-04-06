@@ -34,10 +34,10 @@ class TaskListDao extends DataSource
         return $this->query($sql);
     }
 
-    fucntion getTaskByState($statusID){
+    function getTaskByState($statusID){
         $sql = "SELECT * FROM Tasks WHERE statusID=$statusID";
         $result = $this->query($sql);
-        return $result    
+        return $result; 
     }
 }
 
