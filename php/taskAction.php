@@ -17,9 +17,9 @@ function getTaskById($taskID)
     return json_encode($task);
 }
 
-function updateTaskById($taskID, $statusID){
+function updateTaskById($taskID, $title, $description, $dueDate, $priority, $statusID,$userID){
     global $taskDao;
-    $task = $taskDao->updateTaskStatus($taskID, $statusID);
+    $task = $taskDao->updateTask($taskID, $title, $description, $dueDate, $priority, $statusID, 1, $userID);
     return $task;
 }
 
@@ -39,9 +39,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $taskID = $_POST["taskId"];
         echo getTaskById($taskID);
     }else if ($func == "updateTaskById") {
+        echo var_dump($_POST);
         $taskID = $_POST["taskId"];
-        $statusID = $_POST["StatusID"];
-        echo updateTaskById($taskID, $statusID);
+        $title = $_POST["title"];
+        $description = $_POST["description"];
+        $dueDate = $_POST["dueDate"];
+        $priority = $_POST["priority"];
+        $status = $_POST["status"];
+        $userId = $_POST["userId"];
+
+        echo updateTaskById($taskID, $title, $description, $dueDate, $priority, $status,$userId);
     }else if ($func == "deleteTaskById") {
         $taskID = $_POST["taskId"];
         echo deleteTaskById($taskID);

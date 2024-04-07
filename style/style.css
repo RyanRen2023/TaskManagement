@@ -129,6 +129,10 @@ body {
   /* Black w/ opacity */
 }
 
+.modal.show{
+  display: block;
+}
+
 .modal-content {
   background-color: #fefefe;
   margin: 15% auto;
@@ -138,7 +142,7 @@ body {
   width: 80%;
   /* Could be more or less, depending on screen size */
   background-color: #fefefe;
-  margin: 10% auto;
+  margin: 5% auto;
   /* Adjust to start 10% from the top and centered on the page */
   padding: 20px;
   border: 1px solid #888;
@@ -413,33 +417,32 @@ button[type="reset"]:hover {
   /* Use flexbox */
   justify-content: center;
   /* Center horizontally */
-  gap: 10px;
+  gap: 5px;
+  z-index: 1;
 }
 
 /* CSS for edit button */
 .edit-button {
-  background-color: green;
-  /* Set background color to green */
+  /* width: 20px; */
+  background-color: #4CAF50; /* Green */
   color: white;
-  /* Set text color to white */
+  padding: 5px 18px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
 }
 
 /* CSS for delete button */
 .delete-button {
-  background-color: red;
-  /* Set background color to red */
+  /* width: 30px;  */
+  background-color: #fd1500; /* Green */
   color: white;
-  /* Set text color to white */
+  padding: 5px 5px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
 }
 
-.modal.edit-task-status {
-  display: none;
-  /* Hidden by default */
-}
-
-.modal.edit-task-status.show {
-  display: block;
-}
 
 .modal.delete-task {
   display: none;
@@ -472,19 +475,6 @@ button[type="reset"]:hover {
   width: 80%;
 }
 
-.sr{
-  border-bottom: 1px solid;
-}
-
-.addTaskForm{
-  display: none;
-  /* Hidden by default */
-}
-
-.addTaskForm.show{
-  display: block;
-}
-
 .addTaskForm-content{
   width: 50%;
 }
@@ -497,10 +487,14 @@ button[type="reset"]:hover {
   border-radius: 5px;
 }
 
+
+
 #addTaskForm label {
   display: block;
   margin-bottom: 5px;
 }
+
+
 
 #addTaskForm input[type="text"],
 #addTaskForm textarea,
@@ -544,4 +538,89 @@ button[type="reset"]:hover {
 
 #addTaskForm input[type="reset"]:hover {
   background-color: #f75849; /* Darker green */
+}
+
+
+.taskForm {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.taskForm label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.taskForm input[type="text"],
+.taskForm textarea,
+.taskForm select {
+  width: calc(100% - 12px); /* Adjust for the default padding */
+  padding: 5px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+.taskForm input[type="date"] {
+  width: calc(100% - 12px); /* Adjust for the default padding */
+}
+
+.taskForm input[type="submit"] {
+  width: 100%; /* Button spans full width */
+  background-color: #4CAF50; /* Green */
+  color: white;
+  padding: 5px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.taskForm input[type="submit"]:hover {
+  background-color: #45a049; /* Darker green */
+}
+
+.taskForm input[type="reset"] {
+  width: 100%; /* Button spans full width */
+  background-color: #fd1500; /* Green */
+  color: white;
+  padding: 5px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.taskForm input[type="reset"]:hover {
+  background-color: #f75849; /* Darker green */
+}
+
+.taskForm .submit{
+  width: 100%; /* Button spans full width */
+  background-color: #4CAF50; /* Green */
+  color: white;
+  padding: 5px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.taskForm .reset{
+  width: 100%; /* Button spans full width */
+  background-color: #fd1500; /* Green */
+  color: white;
+  padding: 5px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+/* Style for readonly input */
+input[readonly] {
+  background-color: #f5f5f5; /*  background color */
+  color: #555; /*  text color */
+  border: 1px solid #ccc; /*  border color */
 }

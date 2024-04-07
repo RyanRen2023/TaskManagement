@@ -21,11 +21,23 @@ class TaskDao extends DataSource
     }
 
     // Method to update a task
-    function updateTask($taskID, $title, $description, $dueDate, $priority, $statusID, $categoryID, $assignedToUserID)
-    {
-        $sql = "UPDATE Tasks SET Title='$title', Description='$description', DueDate='$dueDate', Priority='$priority', StatusID=$statusID, CategoryID=$categoryID, AssignedToUserID=$assignedToUserID, UpdatedDate=NOW() WHERE TaskID=$taskID";
-        return $this->query($sql);
+function updateTask($taskID, $title, $description, $dueDate, $priority, $statusID, $categoryID = null, $assignedToUserID = null)
+{
+    $sql = "UPDATE Tasks SET Title='$title', Description='$description', DueDate='$dueDate', Priority='$priority', StatusID=$statusID, UpdatedDate=NOW()";
+    
+    // Add conditions for optional parameters
+    if ($categoryID !== null) {
+        $sql .= ", CategoryID=$categoryID";
     }
+    if ($assignedToUserID !== null) {
+        $sql .= ", AssignedToUserID=$assignedToUserID";
+    }
+    
+    $sql .= " WHERE TaskID=$taskID";
+    echo $sql;
+    return $this->query($sql);
+}
+
 
     function updateTaskStatus($taskID,$statusID)
     {

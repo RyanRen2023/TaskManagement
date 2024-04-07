@@ -200,9 +200,9 @@ function taskFiltering() { };
 // get 'task-li' elements
 const taskItems = document.querySelectorAll('.task-li');
 const buttonContainer = document.getElementById('buttonContainer');
-if (buttonContainer) {
-  buttonContainer.classList.remove('show');
-}
+// if (buttonContainer) {
+//   buttonContainer.classList.remove('show');
+// }
 // Iterate over all 'task-li' elements and add event listeners to each one
 taskItems.forEach(function (item) {
   item.addEventListener('mouseover', function (event) {
@@ -284,42 +284,37 @@ function sendDataToServer(url, method, callback, params) {
 
 
 function showTaskStatusModal(taskId) {
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function () {
+  const url = "../php/taskAction.php";
+  const method = "POST";
+  const params = "taskId=" + taskId + "&func=getTaskById";
+  const callback = function () {
     if (this.readyState == 4 && this.status == 200) {
       console.log("task: " + this.responseText);
       const responseData = JSON.parse(this.responseText);
       console.log(responseData.TaskID);
 
-      setModalData(responseData.TaskID, responseData.Title, responseData.StatusID);
+      setTaskFormData(responseData);
       const task_modal = document.getElementById("edit-task-status");
       task_modal.classList.remove("show");
       // before show need to add data 
       task_modal.classList.add("show");
+    } else {
+      console.log("server error!");
     }
-  };
-
-  // post requirest
-  xmlhttp.open("POST", "../php/taskAction.php", true);
-  // set header
-  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-  // xmlhttp.send("q=" + "str");
-  xmlhttp.send("taskId=" + taskId + "&func=getTaskById");
+  }
+  sendDataToServer(url, method, callback, params)
 
 
 }
 // set modal data for update 
-function setModalData(taskId, taskTitle, taskStatus) {
-
-  // Get the task title element and set its text content
-  document.getElementById("task-title").innerText = taskTitle;
-  // Get the hidden task ID input and set its value
-  document.getElementById("taskId").value = taskId;
-  // Get the hidden task ID input and set its value
-  document.getElementById("default-status").value = taskStatus;
-  // Set the corresponding radio button for task status to checked based on taskStatus
-  document.getElementById("status" + taskStatus).checked = true;
+function setTaskFormData(task) {
+  const taskForm = document.forms["editTaskForm"];
+  taskForm.elements["taskId"].value = task.TaskID;
+  taskForm.elements["title"].value = task.Title;
+  taskForm.elements["description"].value = task.Description;
+  taskForm.elements["dueDate"].value = task.DueDate;
+  taskForm.elements["priority"].value = task.Priority;
+  taskForm.elements["status"].value = task.StatusID;
 
 }
 
@@ -347,6 +342,33 @@ function updateStatusEvent() {
     // refresh the parent page.
     // window.location.reload();
   }
+
+}
+
+function updateTaskFormSubmit() {
+  const taskForm = document.forms["editTaskForm"];
+  let input = document.createElement("input");
+  input.type = "hidden"; 
+  input.name = "func";
+  input.value = "updateTaskById";
+  taskForm.appendChild(input);
+  const formData = new FormData(taskForm);
+
+  fetch('../php/taskAction.php', {
+    method: 'POST',
+    body: formData
+  })
+    .then(response => response.text())
+    .then(data => {
+      console.log("update task == > "+data);
+      closeEditModal();
+      taskForm.removeChild(input);
+      // refresh the parent page.
+      window.location.reload();
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
 
 }
 
@@ -416,35 +438,35 @@ function initialize() {
   console.log("Page initialized");
   // You can put any code here that you want to run after the page is refreshed
   // refresh the parent page.
-  const buttonContainer = document.getElementById('buttonContainer');
-  if (buttonContainer) {
-    buttonContainer.classList.remove('show');
-  }
+  // const buttonContainer = document.getElementById('buttonContainer');
+  // if (buttonContainer) {
+  //   buttonContainer.classList.remove('show');
+  // }
 
 }
 
 var addformbtn = document.getElementById("addTaskButton");
-if(addformbtn){
-  addformbtn.addEventListener('click',function(){
+if (addformbtn) {
+  addformbtn.addEventListener('click', function () {
     let addModel = document.getElementById("add-task");
     addModel.classList.remove("show");
     addModel.classList.add("show");
   })
 }
 
-function goToSearch(){
+function goToSearch() {
   console.log("enter go to search!");
-  location.href="../html/search.php";
+  location.href = "../html/search.php";
 }
 
 
 // cancel add form
-document.getElementById('cancelButton').addEventListener('click', function() {
+document.getElementById('cancelButton').addEventListener('click', function () {
   document.getElementById('add-task').style.display = 'none';
 });
 
 // re-click add task from
-document.getElementById('addTaskButton').addEventListener('click', function() {
+document.getElementById('addTaskButton').addEventListener('click', function () {
   document.getElementById('add-task').style.display = 'block';
 });
 
