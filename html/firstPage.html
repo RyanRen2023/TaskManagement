@@ -48,19 +48,19 @@
         <div class="formcontainer">
           <h1 class="form-welcome">Welcome !</h1>
           <hr>
-          <form id="myForm" action="../php/Login.php" method="post">
+          <form id="myForm" action="../php/Login.php" method="post" onsubmit="return validate2()">
             <!-- the validate function for this form. -->
 
             <div class="textfield">
               <label for="email" class="label-left-align">Email Address</label>
-              <input type="text" name="email" id="email-l" placeholder="Email">
-              <span id="emailError" class="error-message"></span>
+              <input type="text" name="email" id="email-login" placeholder="Email">
+              <span id="emailError2" class="error-message"></span>
             </div>
 
             <div class="textfield">
               <label for="pass" class="label-left-align">Password</label>
-              <input type="password" name="pass" id="pass-l" placeholder="Password">
-              <span id="passwordError" class="error-message"></span>
+              <input type="password" name="pass" id="pass-login" placeholder="Password">
+              <span id="passwordError2" class="error-message"></span>
             </div>
 
             <button type="submit">Login</button>
@@ -79,7 +79,7 @@
         <div class="formcontainer">
           <h1 class="form-welcome">Welcome !</h1>
           <hr>
-          <form id="myForm2" action="../php/Register.php" method="post">
+          <form id="myForm2" action="../php/Register.php" method="post" onsubmit="return validate()">
             <!-- the validate function for this form. -->
     
             <div class="textfield">
