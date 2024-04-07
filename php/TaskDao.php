@@ -21,7 +21,7 @@ class TaskDao extends DataSource
     }
 
     // Method to update a task
-    function updateTask($taskID, $title, $description, $dueDate, $priority, $statusID, $categoryID = null, $assignedToUserID = null)
+function updateTask($taskID, $title, $description, $dueDate, $priority, $statusID, $categoryID = null, $assignedToUserID = null)
 {
     $sql = "UPDATE Tasks SET Title='$title', Description='$description', DueDate='$dueDate', Priority='$priority', StatusID=$statusID, UpdatedDate=NOW()";
     
