@@ -68,7 +68,7 @@ function updateTask($taskID, $title, $description, $dueDate, $priority, $statusI
         FROM task_management_db.tasks AS t
         JOIN task_management_db.taskstatuses AS ts ON t.StatusID = ts.StatusID
         WHERE (t.Title LIKE ?
-        OR ts.StatusName = ?)
+        and ts.StatusName = ?)
         AND t.CreatedByUserID = ?;");
         // $stmt->execute(['keywords' => $keywords, 'taskStatus' => $status, 'userID' => $userID]);
         $kw = "%$keywords%";
